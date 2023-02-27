@@ -1,3 +1,5 @@
+import { useQuery } from 'react-query';
+
 import type { Treatment } from '../../../../../shared/types';
 import { axiosInstance } from '../../../axiosInstance';
 import { queryKeys } from '../../../react-query/constants';
@@ -10,6 +12,6 @@ async function getTreatments(): Promise<Treatment[]> {
 }
 
 export function useTreatments(): Treatment[] {
-  // TODO: get data from server via useQuery
-  return [];
+  const { data } = useQuery(queryKeys.treatments, getTreatments);
+  return data;
 }
