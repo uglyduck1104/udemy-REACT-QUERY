@@ -24,6 +24,7 @@ export function useUserAppointments(): Appointment[] {
   const { data: userAppointments = fallback } = useQuery(
     'user-appointments',
     () => getUserAppointments(user),
+    { enabled: !!user },
   );
 
   return userAppointments;
