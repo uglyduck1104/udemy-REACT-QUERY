@@ -1,4 +1,4 @@
 node_modules
 _eslintrc.json
 _prettierrc.json
-
+*.DS_Store
